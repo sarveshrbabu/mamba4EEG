@@ -7,6 +7,7 @@ Some experiments I have gotten training right now are:
 - Finetuning a MAMBA model using LORA (lora_finetune.py)
 - With HuggingFace and without HuggingFace (with huggingFace is lora_finetune.py without HuggingFace is lora_pytorch_tune.py)
 - With my huggingFace edits and without my huggingFace edits (right now the hugging face changes are in a branch called transformers changes)
+- Some weird stuff is happening with distributed training where its not training properly - where it either uses 1 GPU more than all the others or just fails all together. Debugging this is becoming a little difficult and I don't know if my changes to the hugging face transformers library that allow for finetuning are correct. 
 
 Things I'm working on: 
 
