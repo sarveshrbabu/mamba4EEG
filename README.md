@@ -6,7 +6,7 @@ I think the initial goal is to first be able to run a Mamba model correctly.
 Some experiments I have gotten training right now are: 
 - Finetuning a MAMBA model using LORA (lora_finetune.py)
 - With HuggingFace and without HuggingFace (with huggingFace is lora_finetune.py without HuggingFace is lora_pytorch_tune.py)
-- With my huggingFace edits and without my huggingFace edits (hugging face from src folders)
+- With my huggingFace edits and without my huggingFace edits (right now the hugging face changes are in a branch called transformers changes)
 
 Things I'm working on: 
 
