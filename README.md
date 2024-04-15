@@ -57,3 +57,5 @@ A certain amount of blurring is initially okay. naively tried S4 for EEG seizure
 Hippo initialization intuition: 
 By representing the inputs in terms of these linearly invariant polynomial systems (matrices lmao), you can kind of nicely approximate these functions well. They represent the space over a long period of time. 
 
+Use RCLONE for EEG jobs - and when im training data stuff. 
+
