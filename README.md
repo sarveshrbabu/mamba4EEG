@@ -29,3 +29,31 @@ Task C:
 - Building out a finetuning harness for RLHF for MAMBA (this would be interesting) 
 https://arxiv.org/pdf/2402.14740.pdf
 
+Task D: 
+diffusion model for EEG, where you can use energy based models (kind of like the audio generators that do diffusion -> 30/40khz) 
+
+S4 EEG code is available in the lab (EEG/S4 stuff). 
+
+We have a fairly standard EEG dataset (H5?) Get results on smaller numbers. 
+VAE for EEG (bland EEG, where it could generate brain data). 
+Speed the process for a VAE. 1 second of EEG would be at 200HZ, you can downsample it to how every channels you need. 
+
+Task E: 
+Simran Arora @ Christopher Re's: 
+- How do I want to do this with EEG? Any thoughts on the EEG (long memory thingies), permanent memory of things that can be relevant. How it could sort of work on interacting with KV-caching?
+- The thing that Mamba sucks at is specifcally recalling something from context (KV-caching) 
+- 10 seconds long/3 minutes long. Seizure always starts with 10/20 second pattern. 1/10th 
+- Lisa's Yamada research: Compression for this specific modality 
+- Information content during a seizure (you can zip it and it'll be found). The pattern becomes more predictable. Optimizations doing compression really well.
+- This network where you have token coming in -> compress larger segments and forms representations for that
+- Network that does the encoding and compression and is being trained to do that. A member of its dictionary VQ system, where you have a set of centers of vectors and you can represent the signal with a lot of compression with this set of vectors. You could use this in a very useful way - to come up with candidates that might be seizures (and be able to remember specific activities in the input token space).
+- Attention mechanism could be a recall mechanism (kinda like a dynamic RAG system/ classical information retreival). Network learns which things to store. It always has those in context. 
+
+Normally full context is a 1k steps. Look at the most recent 100. 
+
+intuition: 
+A certain amount of blurring is initially okay. naively tried S4 for EEG seizure detection. There's a certain level of detail that needs to be maintained that can just be dissappearing in the past. You need to maintain medium resolution of the features to make a good comparison. 
+
+Hippo initialization intuition: 
+By representing the inputs in terms of these linearly invariant polynomial systems (matrices lmao), you can kind of nicely approximate these functions well. They represent the space over a long period of time. 
+
